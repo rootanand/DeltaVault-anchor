@@ -1,0 +1,4 @@
+# Canonical JSON. A rewritten byte changes a digest, and verify.py
+# recomputes digests over these files.
+*.json -text -diff
+* text=auto eol=lf
