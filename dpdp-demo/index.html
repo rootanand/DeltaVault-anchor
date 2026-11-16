@@ -3,6 +3,7 @@
 <style>body{font-family:system-ui,sans-serif;max-width:52rem;margin:2rem auto;padding:0 1rem;color:#222}code{font-family:ui-monospace,monospace;word-break:break-all}li{margin:.4rem 0}</style></head><body>
 <h1>DeltaVault DPDP demo, published checkpoints</h1>
 <p><strong>This is a demonstration. Every key is derived from a fixed one-byte seed, so anybody can reproduce them and nobody should trust them.</strong> The checkpoints below were published by the demo's operator from a laptop. This page is the operator's own feed, which annex A1 section 7.2 classifies as operator-local, and it is here so a challenging party can read a commitment root that was committed before they ever challenged it.</p>
+<p><strong>Restarted under the post-quantum format.</strong> The 21 checkpoints published here before were signed under the old Ed25519-only format and have been removed. Every checkpoint from now on is signed with a classical and a post-quantum signature pair.</p>
 <p>Latest checkpoint root, the value the Challenge Desk asks you to paste:</p>
 <p><code style="font-size:1.1rem">ff5b036b5cbd8a9c05331dec58dcd7232e9b5be0c896de75d796f96905d03d10</code></p>
 <p><a href="checkpoint.json">checkpoint.json</a> is the latest checkpoint in canonical JSON, signed by the operator and carrying the local log's witness where one answered.</p>
