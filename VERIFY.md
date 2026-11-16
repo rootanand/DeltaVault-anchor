@@ -4,11 +4,43 @@
 python3 verify.py
 ```
 
-Python 3 and the `openssl` command. No pip install, no network, no account.
+Python 3 and the `openssl` command, version 3.5 or later. No pip install, no
+network, no account. On an older OpenSSL it stops with "OpenSSL 3.5 or later is
+required to check post-quantum signatures": 3.5 is the first release that
+verifies ML-DSA and SLH-DSA, and a verifier that skipped the post-quantum half
+would be checking half of every signature.
 
 `verify.py` recomputes every digest with `hashlib` and checks every signature by
 shelling out to OpenSSL. None of DeltaVault's code runs. If it agrees with these
 files, two independent implementations agree.
+
+## Every signature is a pair
+
+The set is under the **standard profile** of DeltaVault's post-quantum signature
+specification. Each key is a pair of a classical and a post-quantum key, and each
+signature is a pair of signatures by both over one message:
+
+```
+m_pair = "DeltaVault-pair-v1" || 0x00 || suite || 0x00 || m
+```
+
+The suite's name is inside the signed bytes, so neither half can be lifted out
+and replayed under another suite. The root key is `ed25519+slh-dsa-sha2-192s`,
+the batch and log keys `ed25519+ml-dsa-65`. A key's identity is the SHA-256 of
+its suite's name, a zero byte and its encoding.
+
+For each signature `verify.py` first refuses unless the signature names the key's
+suite and identity and the key really owns that identity. Then it splits key and
+signature at the classical component's fixed length, wraps each half's raw key in
+its SubjectPublicKeyInfo, and asks `openssl pkeyutl -verify -rawin` about each
+half separately. It prints one line per half, and a signature passes only when
+both do. An Ed25519 key or signature point of small order is refused before
+OpenSSL is asked, because DeltaVault's own verifier refuses it and OpenSSL alone
+would not.
+
+`python3 verify.py --vectors DIR` runs the same code over a DeltaVault
+checkout's shared test vectors instead: a pair in every suite, and the
+Wycheproof Ed25519 edge cases.
 
 ---
 
@@ -71,5 +103,5 @@ evidence, using tools they already have, from a written specification, years
 later. A verifier you cannot re-implement in an afternoon is one nobody will
 re-implement, and unchecked evidence is not evidence.
 
-So: two hundred lines, two dependencies both of which predate the product, and a
-list above of what it refuses to claim.
+So: under five hundred lines, two dependencies both of which predate the
+product, and a list above of what it refuses to claim.

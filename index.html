@@ -37,15 +37,20 @@ five minutes that depends on none of our code.</p>
 <tr><th>Anchor log root, tree size 1</th></tr>
 <tr><td class="digest"><code>42d5ce45aa6666d2b9b7e70082c7ca1b97b01f3b66c9546be183ef89b6db824e</code></td></tr>
 <tr><th>Root key</th></tr>
-<tr><td class="digest"><code>730a5edc28c2f8daf2d9dce3a01d5f205e35e55582eed2ba26219fabdd4cc9a8</code></td></tr>
+<tr><td class="digest"><code>a5a951a76eef755c47751609f636caaf3254e456956066eba4fffdd14150e7ed</code></td></tr>
 </table>
 
 <h2>Check it</h2>
 
-<p>The verifier needs Python 3 and OpenSSL and nothing else. It recomputes every
-digest with <code>hashlib</code> and checks every signature with the
-<code>openssl</code> command, so agreement means two independent implementations
-agree rather than that our code agrees with itself.</p>
+<p>The verifier needs Python 3 and OpenSSL 3.5 or later and nothing else. It
+recomputes every digest with <code>hashlib</code> and checks every signature with
+the <code>openssl</code> command, so agreement means two independent
+implementations agree rather than that our code agrees with itself.</p>
+
+<p>The set is under the <strong>standard profile</strong>: every signature is a
+pair of a classical and a post-quantum signature, Ed25519 + SLH-DSA-SHA2-192s for
+the root key and Ed25519 + ML-DSA-65 for the batch and log keys, and a pair
+verifies only when both halves do.</p>
 
 <pre><code>git clone https://github.com/rootanand/DeltaVault-anchor
 cd DeltaVault-anchor

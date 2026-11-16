@@ -2,33 +2,9 @@
 <html lang="en"><head><meta charset="utf-8"><title>DeltaVault DPDP demo, published checkpoints</title>
 <style>body{font-family:system-ui,sans-serif;max-width:52rem;margin:2rem auto;padding:0 1rem;color:#222}code{font-family:ui-monospace,monospace;word-break:break-all}li{margin:.4rem 0}</style></head><body>
 <h1>DeltaVault DPDP demo, published checkpoints</h1>
-<p><strong>This is a demonstration. Every key is derived from a fixed one-byte seed, so anybody can reproduce them and nobody should trust them.</strong> The checkpoints below were published by the demo's operator from a laptop. This page is the operator's own feed, which annex A1 section 7.2 classifies as operator-local, and it is here so a challenging party can read a commitment root that was committed before they ever challenged it.</p>
-<p>Latest checkpoint root, the value the Challenge Desk asks you to paste:</p>
-<p><code style="font-size:1.1rem">fb2b5e6c406a6ad60f058c2c24d48579660800452f908e191fe463046bb907e4</code></p>
-<p><a href="checkpoint.json">checkpoint.json</a> is the latest checkpoint in canonical JSON, signed by the operator and carrying the local log's witness where one answered.</p>
+<p><strong>This is a demonstration. Every key is derived from a fixed one-byte seed, so anybody can reproduce them and nobody should trust them.</strong> The checkpoints below are published by the demo's operator from a laptop. This page is the operator's own feed, which annex A1 section 7.2 classifies as operator-local, and it is here so a challenging party can read a commitment root that was committed before they ever challenged it.</p>
+<p><strong>Restarted under the post-quantum format.</strong> The 21 checkpoints published here before were signed under the old Ed25519-only format and have been removed. Every checkpoint from now on is signed with a classical and a post-quantum signature pair.</p>
 <h2>Every checkpoint published here</h2>
-<ol>
-<li><code>fb2b5e6c406a6ad60f058c2c24d48579660800452f908e191fe463046bb907e4</code> <small>range end 1790250345604812400</small> <a href="checkpoints/fb2b5e6c406a6ad60f058c2c24d48579660800452f908e191fe463046bb907e4.json">json</a></li>
-<li><code>584bd6a3ec1ef87a8221853fd5618a4a42e1358e8b7a2e06780891ec1396a327</code> <small>range end 1790249568416436400</small> <a href="checkpoints/584bd6a3ec1ef87a8221853fd5618a4a42e1358e8b7a2e06780891ec1396a327.json">json</a></li>
-<li><code>8dbe81e11dc21551f3bbea4fa1a7e70cbafaed066ce96f820c77daf56110defd</code> <small>range end 1790249022451869000</small> <a href="checkpoints/8dbe81e11dc21551f3bbea4fa1a7e70cbafaed066ce96f820c77daf56110defd.json">json</a></li>
-<li><code>cc0c1734fc79e3e97709cfdacaa3eccc357dcad47893e18494192724585d221d</code> <small>range end 1790249021919939100</small> <a href="checkpoints/cc0c1734fc79e3e97709cfdacaa3eccc357dcad47893e18494192724585d221d.json">json</a></li>
-<li><code>f40cd19db3d9d902a80ba15a11d99e36040c7f042f983cf801e395c3c05598ba</code> <small>range end 1790226462169729700</small> <a href="checkpoints/f40cd19db3d9d902a80ba15a11d99e36040c7f042f983cf801e395c3c05598ba.json">json</a></li>
-<li><code>75231cf985d7d5f975e9b646eae326724a48af48725ab5001839b269e63d7fde</code> <small>range end 1790226374591491700</small> <a href="checkpoints/75231cf985d7d5f975e9b646eae326724a48af48725ab5001839b269e63d7fde.json">json</a></li>
-<li><code>8859619e561cdd358b64231d9be273bcd708f5f123b5c857796d97e3b625accf</code> <small>range end 1790180912173751100</small> <a href="checkpoints/8859619e561cdd358b64231d9be273bcd708f5f123b5c857796d97e3b625accf.json">json</a></li>
-<li><code>b9de8acf1670f789df013879429c81a9d173e829ae0f3955299192e198715fc1</code> <small>range end 1790180269747912100</small> <a href="checkpoints/b9de8acf1670f789df013879429c81a9d173e829ae0f3955299192e198715fc1.json">json</a></li>
-<li><code>d527874ee09f12dafdcf4476fe8eaf925f6f89ec8b29e437df8515259f2321bb</code> <small>range end 1789468714320567900</small> <a href="checkpoints/d527874ee09f12dafdcf4476fe8eaf925f6f89ec8b29e437df8515259f2321bb.json">json</a></li>
-<li><code>dbc2220537e79e2df7e85ac92c025e9423888fc94032638b03d059ebd09cac5e</code> <small>range end 1789468382858268500</small> <a href="checkpoints/dbc2220537e79e2df7e85ac92c025e9423888fc94032638b03d059ebd09cac5e.json">json</a></li>
-<li><code>f668d11f0cdc8699e681dca8fa07ed5575a3b04779f81b711651cb1b090aaaca</code> <small>range end 1789468368097172800</small> <a href="checkpoints/f668d11f0cdc8699e681dca8fa07ed5575a3b04779f81b711651cb1b090aaaca.json">json</a></li>
-<li><code>882fd42f88d8c2adcaacc1c93c6e76f24e615f01d7ce82d2949c5f0f3c6525ce</code> <small>range end 1789468255039707000</small> <a href="checkpoints/882fd42f88d8c2adcaacc1c93c6e76f24e615f01d7ce82d2949c5f0f3c6525ce.json">json</a></li>
-<li><code>a60b1a7857aac7c51bf0e0874a02f41a78442c40bcac1ddc9a725af5f6fcfb08</code> <small>range end 1789468234257088900</small> <a href="checkpoints/a60b1a7857aac7c51bf0e0874a02f41a78442c40bcac1ddc9a725af5f6fcfb08.json">json</a></li>
-<li><code>3eb56275a6eaad52e799c816c9438e5e3f2cfd04b21ab1825cc16839e204499d</code> <small>range end 1789467238792553000</small> <a href="checkpoints/3eb56275a6eaad52e799c816c9438e5e3f2cfd04b21ab1825cc16839e204499d.json">json</a></li>
-<li><code>a7472d2cdbe4098bbea2000a15d827ccde90c74f1bc78153d565c85dfeb91307</code> <small>range end 1789438733967262200</small> <a href="checkpoints/a7472d2cdbe4098bbea2000a15d827ccde90c74f1bc78153d565c85dfeb91307.json">json</a></li>
-<li><code>84151a58da7d705c42d86180963d56e9f2e9a02f307f73688c24c4911ca1b8e6</code> <small>range end 1789438607721262400</small> <a href="checkpoints/84151a58da7d705c42d86180963d56e9f2e9a02f307f73688c24c4911ca1b8e6.json">json</a></li>
-<li><code>584fc4b41db806be517835f0f42f534b5e94b9ef915e1da81b79f1f543e08581</code> <small>range end 1789400968402640000</small> <a href="checkpoints/584fc4b41db806be517835f0f42f534b5e94b9ef915e1da81b79f1f543e08581.json">json</a></li>
-<li><code>a8a1ab638bd94a739c636fd764bd220ce1e67111dcfa66ef74faac31de4ecbef</code> <small>range end 1789400944114571000</small> <a href="checkpoints/a8a1ab638bd94a739c636fd764bd220ce1e67111dcfa66ef74faac31de4ecbef.json">json</a></li>
-<li><code>d79c0fb285ab52d880413b14060721df0d1895ce0e600dbe8f189694d7391363</code> <small>range end 1789400253720831800</small> <a href="checkpoints/d79c0fb285ab52d880413b14060721df0d1895ce0e600dbe8f189694d7391363.json">json</a></li>
-<li><code>509e9e3509698f0924b892c19d639ceef5d5ba18db0388808c2cd0aaa34503f7</code> <small>range end 1789400166455318600</small> <a href="checkpoints/509e9e3509698f0924b892c19d639ceef5d5ba18db0388808c2cd0aaa34503f7.json">json</a></li>
-<li><code>8fc6f7e4ca88d64e14e2a07aea806b818208d4322dae38a5b3febee428f209e1</code> <small>range end 1789399797567071400</small> <a href="checkpoints/8fc6f7e4ca88d64e14e2a07aea806b818208d4322dae38a5b3febee428f209e1.json">json</a></li>
-</ol>
+<p>None yet under the new format.</p>
 <p>The root file a verifier starts from is deliberately not published beside these. It travels separately, per annex A1 section 15.</p>
 </body></html>

@@ -16,10 +16,18 @@ cd DeltaVault-anchor
 python3 verify.py
 ```
 
-Python 3 and the `openssl` command. Nothing else — no pip install, no network,
-no account. It recomputes every digest with `hashlib` and checks every signature
-by shelling out to OpenSSL, so agreement means two independent implementations
-agree rather than that one implementation agrees with itself.
+Python 3 and the `openssl` command, version 3.5 or later. Nothing else — no pip
+install, no network, no account. It recomputes every digest with `hashlib` and
+checks every signature by shelling out to OpenSSL, so agreement means two
+independent implementations agree rather than that one implementation agrees
+with itself. An older OpenSSL stops it with "OpenSSL 3.5 or later is required to
+check post-quantum signatures", because 3.5 is the first to verify ML-DSA and
+SLH-DSA.
+
+**The standard profile.** Every signature here is a pair: a classical half and a
+post-quantum half over the same pair-bound message, and a pair verifies only
+when both halves do. The root key is Ed25519 + SLH-DSA-SHA2-192s; the batch and
+log keys are Ed25519 + ML-DSA-65. `verify.py` prints a line for each half.
 
 Commitment root:
 
